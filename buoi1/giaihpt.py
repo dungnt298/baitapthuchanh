@@ -9,11 +9,13 @@ def giai_he_phuong_trinh(A, B, method='inv'):
             X = np.dot(A_inv, B)
             return X
         except np.linalg.LinAlgError as e:
-            if "matran" in str(e):
+            if "Singular matrix" in str(e):
                 return []
             else:
                 raise e
     elif method == 'det':
+        if A.shape[0] != A.shape[1]:  # Kiểm tra xem A có phải là ma trận vuông không
+            raise ValueError("Ma trận A phải là ma trận vuông để tính định thức.")
         det_A = np.linalg.det(A)
         if abs(det_A) < 1e-6:
             return []  # Hệ phương trình vô nghiệm hoặc có vô số nghiệm
