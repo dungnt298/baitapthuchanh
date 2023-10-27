@@ -85,5 +85,5 @@ def create_input_fields():
 create_fields_button = tk.Button(window, text="Tạo trường nhập liệu", command=create_input_fields)
 create_fields_button.pack()
 
-# Chạy giao diện
+# Chạy giao diện giải hpt
 window.mainloop()
