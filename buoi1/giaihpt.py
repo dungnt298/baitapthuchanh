@@ -1,7 +1,5 @@
 import numpy as np
 
-import numpy as np
-
 def giai_he_phuong_trinh(A, B, method='inv'):
     if method == 'inv':
         if A.shape[0] != A.shape[1]:  # Kiểm tra xem A có phải là ma trận vuông không
@@ -16,8 +14,6 @@ def giai_he_phuong_trinh(A, B, method='inv'):
             else:
                 raise e
     elif method == 'det':
-        if A.shape[0] != A.shape[1]:  # Kiểm tra xem A có phải là ma trận vuông không
-            raise ValueError("Ma trận A phải là ma trận vuông để tính định thức.")
         det_A = np.linalg.det(A)
         if abs(det_A) < 1e-6:
             return []  # Hệ phương trình vô nghiệm hoặc có vô số nghiệm
